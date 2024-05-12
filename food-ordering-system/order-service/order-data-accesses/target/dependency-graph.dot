@@ -1,0 +1,13 @@
+digraph "order-data-accesses" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "org.fos:order-application-service:jar"[label=<order-application-service>]
+  "org.fos:order-domain-core:jar"[label=<order-domain-core>]
+  "org.fos:order-data-accesses:jar"[label=<order-data-accesses>]
+
+  // Edge Definitions:
+  "org.fos:order-application-service:jar" -> "org.fos:order-domain-core:jar"
+  "org.fos:order-data-accesses:jar" -> "org.fos:order-application-service:jar"
+}

@@ -1,0 +1,23 @@
+digraph "food-ordering-system" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "org.fos:order-application-service:jar:compile"[label=<order-application-service>]
+  "org.fos:order-domain-core:jar:compile"[label=<order-domain-core>]
+  "org.fos:order-application:jar:compile"[label=<order-application>]
+  "org.fos:order-data-accesses:jar:compile"[label=<order-data-accesses>]
+  "org.fos:order-messaging:jar:compile"[label=<order-messaging>]
+  "org.fos:order-container:jar:compile"[label=<order-container>]
+
+  // Edge Definitions:
+  "org.fos:order-application-service:jar:compile" -> "org.fos:order-domain-core:jar:compile"
+  "org.fos:order-application:jar:compile" -> "org.fos:order-application-service:jar:compile"
+  "org.fos:order-data-accesses:jar:compile" -> "org.fos:order-application-service:jar:compile"
+  "org.fos:order-messaging:jar:compile" -> "org.fos:order-application-service:jar:compile"
+  "org.fos:order-container:jar:compile" -> "org.fos:order-domain-core:jar:compile"
+  "org.fos:order-container:jar:compile" -> "org.fos:order-application-service:jar:compile"
+  "org.fos:order-container:jar:compile" -> "org.fos:order-application:jar:compile"
+  "org.fos:order-container:jar:compile" -> "org.fos:order-data-accesses:jar:compile"
+  "org.fos:order-container:jar:compile" -> "org.fos:order-messaging:jar:compile"
+}
