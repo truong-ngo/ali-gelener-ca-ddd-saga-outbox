@@ -7,6 +7,7 @@ import org.fos.domain.valueobject.RestaurantId;
 import org.fos.dto.create.CreateOrderCommand;
 import org.fos.dto.create.CreateOrderResponse;
 import org.fos.dto.create.OrderAddress;
+import org.fos.dto.track.TrackOrderResponse;
 import org.fos.orderservicedomain.entity.Order;
 import org.fos.orderservicedomain.entity.OrderItem;
 import org.fos.orderservicedomain.entity.Product;
@@ -21,14 +22,14 @@ import java.util.UUID;
 public class OrderDataMapper {
 
     public Restaurant createOrderCommandToRestaurant(CreateOrderCommand createOrderCommand) {
-        return Restaurant.Builder.builder()
+        return Restaurant.builder()
                 .id(new RestaurantId(createOrderCommand.restaurantId()))
                 .products(createOrderCommand.items().stream().map(ot -> new Product(new ProductId(ot.productId()))).toList())
                 .build();
     }
 
     public Order createOrderCommandToOrder(CreateOrderCommand createOrderCommand) {
-        return Order.Builder.builder()
+        return Order.builder()
                 .customerId(new CustomerId(createOrderCommand.customerId()))
                 .restaurantId(new RestaurantId(createOrderCommand.restaurantId()))
                 .deliveryAddress(orderAddressToStreetAddress(createOrderCommand.address()))
@@ -37,15 +38,23 @@ public class OrderDataMapper {
                 .build();
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse(Order order) {
+    public CreateOrderResponse orderToCreateOrderResponse(Order order, String message) {
         return CreateOrderResponse.builder()
+                .trackingId(order.getTrackingId().getValue())
+                .status(order.getOrderStatus())
+                .message(message)
+                .build();
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order) {
+        return TrackOrderResponse.builder()
                 .trackingId(order.getTrackingId().getValue())
                 .status(order.getOrderStatus())
                 .build();
     }
 
     private List<OrderItem> orderItemToOrderItemEntity(List<org.fos.dto.create.OrderItem> items) {
-        return items.stream().map(ot -> OrderItem.Builder.builder()
+        return items.stream().map(ot -> OrderItem.builder()
                 .product(new Product(new ProductId(ot.productId())))
                 .price(new Money(ot.price()))
                 .quantity(ot.quantity())

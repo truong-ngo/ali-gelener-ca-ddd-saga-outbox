@@ -9,6 +9,5 @@ import java.util.List;
 import java.util.UUID;
 
 @Builder
-@AllArgsConstructor
 public record TrackOrderResponse(@NotNull UUID trackingId, @NotNull OrderStatus status, List<String> failureMessages) {
 }

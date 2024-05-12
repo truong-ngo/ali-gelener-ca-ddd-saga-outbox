@@ -32,6 +32,10 @@ public class Order extends AggregateRoot<OrderId> {
         failureMessages = builder.failureMessages;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public CustomerId getCustomerId() {
         return customerId;
     }
@@ -108,7 +112,7 @@ public class Order extends AggregateRoot<OrderId> {
     }
 
     private void validateItemPrice(OrderItem orderItem) {
-        if (orderItem.isPriceValid()) {
+        if (!orderItem.isPriceValid()) {
             throw new OrderDomainException("OrderItem price: " + orderItem.getPrice().amount() + " is not valid for product " + orderItem.getProduct().getId().getValue());
         }
     }
@@ -181,10 +185,6 @@ public class Order extends AggregateRoot<OrderId> {
         private List<String> failureMessages;
 
         private Builder() {
-        }
-
-        public static Builder builder() {
-            return new Builder();
         }
 
         public Builder orderId(OrderId val) {
