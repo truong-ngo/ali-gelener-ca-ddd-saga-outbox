@@ -1,10 +1,10 @@
 package org.fos.order.data.access.restaurant.mapper;
 
+import org.fos.common.data.access.entity.RestaurantEntity;
+import org.fos.common.data.access.exception.RestaurantDataAccessException;
 import org.fos.common.domain.valueobject.Money;
 import org.fos.common.domain.valueobject.ProductId;
 import org.fos.common.domain.valueobject.RestaurantId;
-import org.fos.order.data.access.restaurant.entity.RestaurantEntity;
-import org.fos.order.data.access.restaurant.exception.RestaurantDataAccessException;
 import org.fos.order.domain.core.entity.Product;
 import org.fos.order.domain.core.entity.Restaurant;
 import org.springframework.stereotype.Component;

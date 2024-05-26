@@ -1,9 +1,9 @@
 package org.fos.order.data.access.restaurant.adapter;
 
 import lombok.RequiredArgsConstructor;
+import org.fos.common.data.access.repository.RestaurantJpaRepository;
 import org.fos.order.app.service.ports.output.repository.RestaurantRepository;
 import org.fos.order.data.access.restaurant.mapper.RestaurantDataAccessMapper;
-import org.fos.order.data.access.restaurant.repository.RestaurantJpaRepository;
 import org.fos.order.domain.core.entity.Restaurant;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +19,10 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
 
     @Override
     public Optional<Restaurant> findRestaurantInformation(Restaurant restaurant) {
-        return restaurantJpaRepository.findByRestaurantIdAndProductIdIn(
-                restaurant.getId().getValue(),
-                restaurantDataAccessMapper.restaurantToRestaurantProductIds(restaurant))
+        return restaurantJpaRepository
+                .findByRestaurantIdAndProductIdIn(
+                        restaurant.getId().getValue(),
+                        restaurantDataAccessMapper.restaurantToRestaurantProductIds(restaurant))
                 .map(restaurantDataAccessMapper::restaurantEntityToRestaurant);
     }
 }

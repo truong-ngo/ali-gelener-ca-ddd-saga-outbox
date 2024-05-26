@@ -3,6 +3,7 @@ package org.fos.order.messaging.publisher;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.fos.kafka.model.avro.order.PaymentRequestAvroModel;
+import org.fos.kafka.producer.service.KafkaMessagePublisherHelper;
 import org.fos.kafka.producer.service.KafkaProducer;
 import org.fos.order.app.service.config.OrderServiceConfigData;
 import org.fos.order.app.service.ports.output.message.publisher.payment.OrderCancelledPaymentRequestMessagePublisher;
@@ -24,7 +25,7 @@ public class CancelledOrderKafkaMessagePublisher implements OrderCancelledPaymen
 
     private final KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer;
 
-    private final OrderKafkaMessagePublisherHelper orderKafkaMessagePublisherHelper;
+    private final KafkaMessagePublisherHelper orderKafkaMessagePublisherHelper;
 
     @Override
     public void publish(OrderCancelledEvent domainEvent) {

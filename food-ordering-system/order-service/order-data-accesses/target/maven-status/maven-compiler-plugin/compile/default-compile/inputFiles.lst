@@ -10,8 +10,4 @@ C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-servi
 C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-data-accesses\src\main\java\org\fos\order\data\access\order\mapper\OrderDataAccessMapper.java
 C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-data-accesses\src\main\java\org\fos\order\data\access\order\repository\OrderJpaRepository.java
 C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-data-accesses\src\main\java\org\fos\order\data\access\restaurant\adapter\RestaurantRepositoryImpl.java
-C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-data-accesses\src\main\java\org\fos\order\data\access\restaurant\entity\RestaurantEntity.java
-C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-data-accesses\src\main\java\org\fos\order\data\access\restaurant\entity\RestaurantEntityId.java
-C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-data-accesses\src\main\java\org\fos\order\data\access\restaurant\exception\RestaurantDataAccessException.java
 C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-data-accesses\src\main\java\org\fos\order\data\access\restaurant\mapper\RestaurantDataAccessMapper.java
-C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-data-accesses\src\main\java\org\fos\order\data\access\restaurant\repository\RestaurantJpaRepository.java

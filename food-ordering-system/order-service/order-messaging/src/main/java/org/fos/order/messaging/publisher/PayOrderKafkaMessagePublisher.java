@@ -3,6 +3,7 @@ package org.fos.order.messaging.publisher;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.fos.kafka.model.avro.order.RestaurantApprovalRequestAvroModel;
+import org.fos.kafka.producer.service.KafkaMessagePublisherHelper;
 import org.fos.kafka.producer.service.KafkaProducer;
 import org.fos.order.app.service.config.OrderServiceConfigData;
 import org.fos.order.app.service.ports.output.message.publisher.restaurantapproval.OrderPaidRestaurantRequestMessagePublisher;
@@ -24,7 +25,7 @@ public class PayOrderKafkaMessagePublisher implements OrderPaidRestaurantRequest
 
     private final KafkaProducer<String, RestaurantApprovalRequestAvroModel> kafkaProducer;
 
-    private final OrderKafkaMessagePublisherHelper orderKafkaMessagePublisherHelper;
+    private final KafkaMessagePublisherHelper orderKafkaMessagePublisherHelper;
 
     @Override
     public void publish(OrderPaidEvent domainEvent) {

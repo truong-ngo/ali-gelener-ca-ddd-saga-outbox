@@ -1,16 +1,10 @@
-org\fos\order\data\access\restaurant\entity\RestaurantEntityId$RestaurantEntityIdBuilder.class
 org\fos\order\data\access\customer\repository\CustomerJpaRepository.class
 org\fos\order\data\access\order\entity\OrderAddressEntity$OrderAddressEntityBuilder.class
-org\fos\order\data\access\restaurant\repository\RestaurantJpaRepository.class
-org\fos\order\data\access\restaurant\exception\RestaurantDataAccessException.class
 org\fos\order\data\access\customer\entity\CustomerEntity.class
 org\fos\order\data\access\order\entity\OrderEntity.class
-org\fos\order\data\access\restaurant\entity\RestaurantEntity.class
 org\fos\order\data\access\order\entity\OrderItemEntity$OrderItemEntityBuilder.class
 org\fos\order\data\access\order\entity\OrderItemEntityId$OrderItemEntityIdBuilder.class
-org\fos\order\data\access\restaurant\entity\RestaurantEntity$RestaurantEntityBuilder.class
 org\fos\order\data\access\customer\adapter\CustomerRepositoryImpl.class
-org\fos\order\data\access\restaurant\entity\RestaurantEntityId.class
 org\fos\order\data\access\order\adapter\OrderRepositoryImpl.class
 org\fos\order\data\access\restaurant\mapper\RestaurantDataAccessMapper.class
 org\fos\order\data\access\restaurant\adapter\RestaurantRepositoryImpl.class

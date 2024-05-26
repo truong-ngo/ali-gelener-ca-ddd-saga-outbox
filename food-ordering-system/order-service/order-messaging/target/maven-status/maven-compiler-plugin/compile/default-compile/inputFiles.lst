@@ -3,5 +3,4 @@ C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-servi
 C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-messaging\src\main\java\org\fos\order\messaging\mapper\OrderMessagingDataMapper.java
 C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-messaging\src\main\java\org\fos\order\messaging\publisher\CancelledOrderKafkaMessagePublisher.java
 C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-messaging\src\main\java\org\fos\order\messaging\publisher\CreateOrderKafkaMessagePublisher.java
-C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-messaging\src\main\java\org\fos\order\messaging\publisher\OrderKafkaMessagePublisherHelper.java
 C:\Learning\Demo\ali-gelener-ca-ddd-saga-outbox\food-ordering-system\order-service\order-messaging\src\main\java\org\fos\order\messaging\publisher\PayOrderKafkaMessagePublisher.java

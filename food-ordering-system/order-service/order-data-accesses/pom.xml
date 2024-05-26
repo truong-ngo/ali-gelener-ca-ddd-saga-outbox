@@ -20,6 +20,10 @@
     <dependencies>
         <dependency>
             <groupId>org.fos</groupId>
+            <artifactId>common-data-access</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.fos</groupId>
             <artifactId>order-application-service</artifactId>
         </dependency>
         <dependency>
