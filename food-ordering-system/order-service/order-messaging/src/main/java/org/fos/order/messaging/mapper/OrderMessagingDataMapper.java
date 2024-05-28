@@ -23,7 +23,7 @@ public class OrderMessagingDataMapper {
                 .setId(UUID.randomUUID().toString())
                 .setSagaId("")
                 .setCustomerId(order.getCustomerId().getValue().toString())
-                .setOrderId(order.getId().toString())
+                .setOrderId(order.getId().getValue().toString())
                 .setPrice(order.getPrice().amount())
                 .setCreatedAt(orderCreatedEvent.getCreatedAt().toInstant())
                 .setPaymentOrderStatus(PaymentOrderStatus.PENDING)
@@ -36,7 +36,7 @@ public class OrderMessagingDataMapper {
                 .setId(UUID.randomUUID().toString())
                 .setSagaId("")
                 .setCustomerId(order.getCustomerId().getValue().toString())
-                .setOrderId(order.getId().toString())
+                .setOrderId(order.getId().getValue().toString())
                 .setPrice(order.getPrice().amount())
                 .setCreatedAt(orderCancelledEvent.getCreatedAt().toInstant())
                 .setPaymentOrderStatus(PaymentOrderStatus.CANCELLED)
@@ -56,6 +56,8 @@ public class OrderMessagingDataMapper {
                                 .setId(ot.getProduct().getId().getValue().toString())
                                 .setQuantity(ot.getQuantity())
                                 .build()).collect(Collectors.toList()))
+                .setPrice(orderPaidEvent.getOrder().getPrice().amount())
+                .setCreatedAt(orderPaidEvent.getCreatedAt().toInstant())
                 .build();
     }
 

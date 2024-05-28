@@ -1,6 +1,7 @@
 package org.fos.order.data.access.order.adapter;
 
 import lombok.RequiredArgsConstructor;
+import org.fos.common.domain.valueobject.OrderId;
 import org.fos.order.app.service.ports.output.repository.OrderRepository;
 import org.fos.order.data.access.order.mapper.OrderDataAccessMapper;
 import org.fos.order.data.access.order.repository.OrderJpaRepository;
@@ -22,6 +23,11 @@ public class OrderRepositoryImpl implements OrderRepository {
     public Order save(Order order) {
         return orderDataAccessMapper.orderEntityToOrder(orderJpaRepository
                 .save(orderDataAccessMapper.orderToOrderEntity(order)));
+    }
+
+    @Override
+    public Optional<Order> findById(OrderId orderId) {
+        return orderJpaRepository.findById(orderId.getValue()).map(orderDataAccessMapper::orderEntityToOrder);
     }
 
     @Override

@@ -1,0 +1,20 @@
+curl --location --request GET 'localhost:8181/orders/06a3bce9-b6c0-45b4-b59f-5c1adc6c05c5' \
+--header 'Content-Type: application/json' \
+--data '{
+    "customerId": "d215b5f8-0249-4dc5-89a3-51fd148cfb41",
+    "restaurantId": "d215b5f8-0249-4dc5-89a3-51fd148cfb45",
+    "address": {
+        "street": "street_1",
+        "postalCode": "1000AB",
+        "city": "Amsterdam"
+    },
+    "price": 25.00,
+    "items": [
+        {
+            "productId": "d215b5f8-0249-4dc5-89a3-51fd148cfb47",
+            "quantity": 1,
+            "price": 25.00,
+            "subTotal": 25.00
+        }
+    ]
+}'

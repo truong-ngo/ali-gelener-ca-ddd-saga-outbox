@@ -155,7 +155,7 @@ public class Order extends AggregateRoot<OrderId> {
     }
 
     private void updateFailureMessages(List<String> failureMessages) {
-        if (this.failureMessages != null && failureMessages != null) {
+        if (this.failureMessages != null && failureMessages != null && !failureMessages.isEmpty()) {
             this.failureMessages.addAll(failureMessages.stream().filter(m -> !m.isEmpty()).toList());
         }
 
@@ -169,7 +169,7 @@ public class Order extends AggregateRoot<OrderId> {
             throw new OrderDomainException("Order is not in correct state for cancel operation");
         }
 
-        orderStatus = OrderStatus.CANCELED;
+        orderStatus = OrderStatus.CANCELLED;
         updateFailureMessages(failureMessages);
     }
 
